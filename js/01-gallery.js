@@ -44,13 +44,15 @@ function onGalleryContainerClick(event) {
 
     instance.show()
 
-    galleryContainer.addEventListener('keydown', (event) => {
-        if (event.code === 'Escape') {
-            galleryContainer.removeEventListener('keydown', event);
-            instance.close();
-            console.log("click event listener was removed from btn");
+    galleryContainer.addEventListener('keydown', closecardsMarkup);
+
+    function closecardsMarkup() {
+            if (event.code === 'Escape') {
+                galleryContainer.removeEventListener('keydown', event);
+                instance.close();
+                console.log("click event listener was removed from btn");
             }
-    });
+        }   
 }
 
 
